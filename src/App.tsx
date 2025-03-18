@@ -41,7 +41,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ isOpen, onClose, title, des
             <div className="bg-[#0f0f0f] p-8 rounded-2xl">
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center space-x-4">
-                  <Icon className="h-8 w-8 text-[#4ecdc4]" />
+                  <Icon className="h-8 w-8 text-[#64ffda]" />
                   <h3 className="text-2xl font-bold">{title}</h3>
                 </div>
                 <button
@@ -91,7 +91,7 @@ const ExpertiseModal: React.FC<ExpertiseModalProps> = ({ isOpen, onClose, title,
             <div className="bg-[#0f0f0f] p-8 rounded-2xl">
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center space-x-4">
-                  <Icon className="h-8 w-8 text-[#4ecdc4]" />
+                  <Icon className="h-8 w-8 text-[#64ffda]" />
                   <h3 className="text-2xl font-bold">{title}</h3>
                 </div>
                 <button
@@ -103,7 +103,7 @@ const ExpertiseModal: React.FC<ExpertiseModalProps> = ({ isOpen, onClose, title,
                 </button>
               </div>
               <div className="text-center">
-                <p className="text-4xl font-bold text-[#4ecdc4] mb-4">{count}</p>
+                <p className="text-4xl font-bold text-[#64ffda] mb-4">{count}</p>
                 <p className="text-gray-400 text-lg">{title} {projectsText}</p>
               </div>
             </div>
@@ -195,7 +195,7 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Brain className="h-8 w-8 text-[#4ecdc4]" aria-hidden="true" />
+            <Brain className="h-8 w-8 text-[#64ffda]" aria-hidden="true" />
             <span className="text-xl font-bold gradient-text">ConsultPro</span>
           </motion.div>
           <motion.div 
@@ -205,9 +205,9 @@ function App() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="hidden md:flex space-x-8">
-              <a href="#services" className="hover:text-[#4ecdc4] transition-colors" aria-label={t.nav.services}>{t.nav.services}</a>
-              <a href="#expertise" className="hover:text-[#4ecdc4] transition-colors" aria-label={t.nav.expertise}>{t.nav.expertise}</a>
-              <a href="#contact" className="hover:text-[#4ecdc4] transition-colors" aria-label={t.nav.contact}>{t.nav.contact}</a>
+              <a href="#services" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.services}>{t.nav.services}</a>
+              <a href="#expertise" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.expertise}>{t.nav.expertise}</a>
+              <a href="#contact" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.contact}>{t.nav.contact}</a>
             </div>
             <button
               onClick={toggleLanguage}
@@ -283,7 +283,7 @@ function App() {
                 onClick={() => setSelectedService(service)}
               >
                 <div className="bg-[#0f0f0f] p-8 rounded-2xl h-full hover:bg-[#1a1a1a] transition-colors">
-                  <service.icon className="h-12 w-12 text-[#4ecdc4] mb-6" aria-hidden="true" />
+                  <service.icon className="h-12 w-12 text-[#64ffda] mb-6" aria-hidden="true" />
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-gray-400">{service.description}</p>
                 </div>
@@ -338,9 +338,9 @@ function App() {
                 onClick={() => setSelectedExpertise(item)}
               >
                 <div className="bg-[#0f0f0f] p-6 rounded-2xl text-center hover:bg-[#1a1a1a] transition-colors">
-                  <item.icon className="h-12 w-12 mx-auto text-[#4ecdc4] mb-4" aria-hidden="true" />
+                  <item.icon className="h-12 w-12 mx-auto text-[#64ffda] mb-4" aria-hidden="true" />
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-[#4ecdc4] font-bold">{item.count} {t.expertise.projects}</p>
+                  <p className="text-[#64ffda] font-bold">{item.count} {t.expertise.projects}</p>
                 </div>
               </motion.div>
             ))}
@@ -378,13 +378,13 @@ function App() {
                 <h3 className="text-2xl font-bold mb-6">{t.contact.info}</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <Mail className="h-6 w-6 text-[#4ecdc4]" aria-hidden="true" />
-                    <a href="mailto:contact@consultpro.com" className="hover:text-[#4ecdc4] transition-colors">
+                    <Mail className="h-6 w-6 text-[#64ffda]" aria-hidden="true" />
+                    <a href="mailto:contact@consultpro.com" className="hover:text-[#64ffda] transition-colors">
                       contact@consultpro.com
                     </a>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <MessageSquare className="h-6 w-6 text-[#4ecdc4]" aria-hidden="true" />
+                    <MessageSquare className="h-6 w-6 text-[#64ffda]" aria-hidden="true" />
                     <span>{t.contact.schedule}</span>
                   </div>
                 </div>
@@ -445,7 +445,7 @@ function App() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Brain className="h-8 w-8 text-[#4ecdc4]" />
+              <Brain className="h-8 w-8 text-[#64ffda]" />
               <span className="text-xl font-bold gradient-text">ConsultPro</span>
             </div>
             <div className="text-center md:text-right text-gray-400">
