@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Mail, MessageSquare, ArrowRight, Building2, Code, Globe2, Notebook, Languages, X } from 'lucide-react';
+import { Brain, Mail, MessageSquare, ArrowRight, Building2, Code, Globe2, Notebook, Languages, X, Calendar } from 'lucide-react';
 import { useLanguage } from './contexts/LanguageContext';
 import { translations } from './translations';
 
@@ -114,6 +114,64 @@ const ExpertiseModal: React.FC<ExpertiseModalProps> = ({ isOpen, onClose, title,
   );
 };
 
+const CalendarModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-[#0f0f0f] p-8 rounded-2xl max-w-md w-full mx-4 relative"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <h2 className="text-2xl font-bold mb-6 gradient-text">Schedule a Consultation</h2>
+            <div className="space-y-4">
+              <p className="text-gray-400">Select a date and time for your consultation:</p>
+              <div className="grid grid-cols-7 gap-2">
+                {/* Calendar days would go here */}
+                {Array.from({ length: 31 }, (_, i) => (
+                  <button
+                    key={i}
+                    className="aspect-square rounded-lg hover:bg-[#1a1a1a] transition-colors"
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </div>
+              <div className="flex justify-end space-x-4 mt-6">
+                <button
+                  onClick={onClose}
+                  className="px-4 py-2 rounded-lg hover:bg-[#1a1a1a] transition-colors"
+                >
+                  Cancel
+                </button>
+                <button className="px-4 py-2 rounded-lg gradient-border">
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 function App() {
   const { language, setLanguage } = useLanguage();
   const t = translations[language as keyof typeof translations];
@@ -132,6 +190,7 @@ function App() {
     count: string;
     icon: React.ElementType;
   } | null>(null);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -189,13 +248,14 @@ function App() {
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-[#0f0f0f]/80 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <motion.div 
-            className="flex items-center space-x-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <Brain className="h-8 w-8 text-[#64ffda]" aria-hidden="true" />
+            <Brain className="h-8 w-8 text-[#4ecdc4]" aria-hidden="true" />
             <span className="text-xl font-bold gradient-text">ConsultPro</span>
           </motion.div>
           <motion.div 
@@ -384,8 +444,13 @@ function App() {
                     </a>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <MessageSquare className="h-6 w-6 text-[#64ffda]" aria-hidden="true" />
-                    <span>{t.contact.schedule}</span>
+                    <MessageSquare className="h-6 w-6 text-[#4ecdc4]" aria-hidden="true" />
+                    <span 
+                      onClick={() => setIsCalendarOpen(true)}
+                      className="hover:text-[#4ecdc4] transition-colors cursor-pointer"
+                    >
+                      {t.contact.schedule}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -444,8 +509,8 @@ function App() {
       <footer className="py-12 border-t border-gray-800">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Brain className="h-8 w-8 text-[#64ffda]" />
+            <div className="flex items-center space-x-2 mb-4 md:mb-0 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Brain className="h-8 w-8 text-[#4ecdc4]" />
               <span className="text-xl font-bold gradient-text">ConsultPro</span>
             </div>
             <div className="text-center md:text-right text-gray-400">
@@ -454,6 +519,8 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
     </div>
   );
 }
