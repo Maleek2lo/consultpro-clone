@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Brain, Mail, MessageSquare, ArrowRight, Building2, Code, Globe2, Notebook, Languages, X, Calendar } from 'lucide-react';
 import { useLanguage } from './contexts/LanguageContext';
 import { translations } from './translations';
+import Products from './components/Products';
 
 interface FormData {
   name: string;
@@ -249,11 +250,11 @@ function App() {
       <nav className="fixed w-full z-50 bg-[#0f0f0f]/80 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
             <Brain className="h-8 w-8 text-[#4ecdc4]" aria-hidden="true" />
             <span className="text-xl font-bold gradient-text">ConsultPro</span>
@@ -266,6 +267,7 @@ function App() {
           >
             <div className="hidden md:flex space-x-8">
               <a href="#services" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.services}>{t.nav.services}</a>
+              <a href="#products" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.products}>{t.nav.products}</a>
               <a href="#expertise" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.expertise}>{t.nav.expertise}</a>
               <a href="#contact" className="hover:text-[#64ffda] transition-colors" aria-label={t.nav.contact}>{t.nav.contact}</a>
             </div>
@@ -351,6 +353,9 @@ function App() {
           </motion.div>
         </div>
       </section>
+
+      {/* Products Section */}
+      <Products />
 
       {/* Service Modal */}
       <ServiceModal

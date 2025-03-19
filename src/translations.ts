@@ -3,7 +3,8 @@ export const translations = {
     nav: {
       services: 'Services',
       expertise: 'Expertise',
-      contact: 'Contact'
+      contact: 'Contact',
+      products: 'Products'
     },
     hero: {
       title: 'Transform Your AEC Business',
@@ -49,13 +50,74 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved.'
+    },
+    products: {
+      title: 'AI-Powered Solutions',
+      subtitle: 'Transform your AEC business with our cutting-edge AI solutions',
+      plans: {
+        aiDesign: {
+          title: 'AI-Driven Design',
+          description: 'Optimize designs for energy efficiency and cost reduction',
+          features: ['Energy efficiency analysis', 'Cost optimization', 'Structural integrity checks'],
+          price: 'From $299/month'
+        },
+        projectManagement: {
+          title: 'Smart Project Management',
+          description: 'AI-enhanced project management with predictive analytics',
+          features: ['Predictive timeline analysis', 'Automated risk assessment', 'Resource optimization'],
+          price: 'From $399/month'
+        },
+        automation: {
+          title: 'Process Automation',
+          description: 'Automate routine tasks and enhance efficiency',
+          features: ['Smart scheduling', 'Resource allocation', 'Compliance monitoring'],
+          price: 'From $249/month'
+        },
+        maintenance: {
+          title: 'Predictive Maintenance',
+          description: 'Prevent equipment failures before they occur',
+          features: ['Equipment monitoring', 'Maintenance scheduling', 'Downtime prevention'],
+          price: 'From $199/month'
+        },
+        vrPlatform: {
+          title: 'VR Collaboration',
+          description: 'Virtual reality platform for remote team collaboration',
+          features: ['Real-time model review', 'Virtual meetings', 'Cross-platform support'],
+          price: 'From $349/month'
+        },
+        bimAnalytics: {
+          title: 'BIM Analytics',
+          description: 'AI-powered insights from your BIM data',
+          features: ['Workflow optimization', 'Data analysis', 'Decision support'],
+          price: 'From $449/month'
+        },
+        safety: {
+          title: 'Safety Monitoring',
+          description: 'AI-driven safety compliance monitoring',
+          features: ['Real-time monitoring', 'Incident prevention', 'Compliance reporting'],
+          price: 'From $299/month'
+        },
+        crm: {
+          title: 'AEC CRM',
+          description: 'Specialized CRM system for AEC firms',
+          features: ['Client management', 'Project tracking', 'Opportunity forecasting'],
+          price: 'From $199/month'
+        }
+      },
+      cta: 'Start Free Trial',
+      enterprise: {
+        title: 'Enterprise Solutions',
+        description: 'Custom solutions for large organizations',
+        cta: 'Contact Sales'
+      }
     }
   },
   fr: {
     nav: {
       services: 'Services',
       expertise: 'Expertise',
-      contact: 'Contact'
+      contact: 'Contact',
+      products: 'Produits'
     },
     hero: {
       title: 'Transformez Votre Entreprise AEC',
@@ -101,6 +163,66 @@ export const translations = {
     },
     footer: {
       rights: 'Tous droits réservés.'
+    },
+    products: {
+      title: 'Solutions IA',
+      subtitle: 'Transformez votre entreprise AEC avec nos solutions IA de pointe',
+      plans: {
+        aiDesign: {
+          title: 'Conception IA',
+          description: 'Optimisez les conceptions pour l\'efficacité énergétique',
+          features: ['Analyse énergétique', 'Optimisation des coûts', 'Vérifications structurelles'],
+          price: 'À partir de 299€/mois'
+        },
+        projectManagement: {
+          title: 'Gestion de Projet IA',
+          description: 'Gestion de projet améliorée par l\'IA',
+          features: ['Analyse prédictive', 'Évaluation des risques', 'Optimisation des ressources'],
+          price: 'À partir de 399€/mois'
+        },
+        automation: {
+          title: 'Automatisation',
+          description: 'Automatisez les tâches routinières',
+          features: ['Planification intelligente', 'Allocation des ressources', 'Suivi de conformité'],
+          price: 'À partir de 249€/mois'
+        },
+        maintenance: {
+          title: 'Maintenance Prédictive',
+          description: 'Prévenez les pannes d\'équipement',
+          features: ['Surveillance des équipements', 'Planification', 'Prévention des arrêts'],
+          price: 'À partir de 199€/mois'
+        },
+        vrPlatform: {
+          title: 'Collaboration VR',
+          description: 'Plateforme de réalité virtuelle pour la collaboration',
+          features: ['Revue de modèles', 'Réunions virtuelles', 'Support multiplateforme'],
+          price: 'À partir de 349€/mois'
+        },
+        bimAnalytics: {
+          title: 'Analytique BIM',
+          description: 'Analyses BIM alimentées par l\'IA',
+          features: ['Optimisation des flux', 'Analyse de données', 'Aide à la décision'],
+          price: 'À partir de 449€/mois'
+        },
+        safety: {
+          title: 'Surveillance Sécurité',
+          description: 'Surveillance de la sécurité par IA',
+          features: ['Surveillance en temps réel', 'Prévention', 'Rapports de conformité'],
+          price: 'À partir de 299€/mois'
+        },
+        crm: {
+          title: 'CRM AEC',
+          description: 'Système CRM spécialisé pour l\'AEC',
+          features: ['Gestion clients', 'Suivi de projets', 'Prévision d\'opportunités'],
+          price: 'À partir de 199€/mois'
+        }
+      },
+      cta: 'Essai Gratuit',
+      enterprise: {
+        title: 'Solutions Entreprise',
+        description: 'Solutions personnalisées pour grandes organisations',
+        cta: 'Contacter les Ventes'
+      }
     }
   }
 };
