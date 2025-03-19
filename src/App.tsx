@@ -271,11 +271,10 @@ function App() {
             </div>
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-2 px-4 py-2 rounded-full gradient-border"
+              className="px-4 py-2 rounded-full gradient-border"
               aria-label={`Switch to ${language === 'en' ? 'French' : 'English'}`}
             >
-              <Languages className="h-5 w-5" aria-hidden="true" />
-              <span>{language.toUpperCase()}</span>
+              <span className="font-bold">{language.toUpperCase()}</span>
             </button>
           </motion.div>
         </div>

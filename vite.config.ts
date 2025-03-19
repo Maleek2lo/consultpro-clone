@@ -11,7 +11,7 @@ export default defineConfig({
     port: 5173,
     host: true
   },
-  base: '/consultpro-clone/', // This will be your repository name
+  base: '/consultpro-clone/',
   build: {
     outDir: 'dist',
     sourcemap: true,
