@@ -10,5 +10,11 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true
-  }
+  },
+  base: '/consultpro-clone/', // This will be your repository name
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+    minify: 'terser',
+  },
 });
